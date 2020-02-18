@@ -1,8 +1,10 @@
 .DS_Store
 .tmp
 *.log
+*.png
 *.sublime-project
 *.sublime-workspace
+*.svg
 *.sw[mnpcod]
 *.tmp
 *.tmp.*
