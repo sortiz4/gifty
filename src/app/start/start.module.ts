@@ -3,12 +3,12 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
-import { SplashPage } from './splash.page';
+import { StartPage } from './start.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: SplashPage,
+    component: StartPage,
   },
 ];
 
@@ -20,7 +20,7 @@ const routes: Routes = [
     RouterModule.forChild(routes),
   ],
   declarations: [
-    SplashPage,
+    StartPage,
   ],
 })
-export class SplashPageModule {}
+export class StartPageModule {}
