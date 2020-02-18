@@ -45,6 +45,7 @@
   },
   "scripts": {
     "ng": "ng",
+    "serve": "ionic serve",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
