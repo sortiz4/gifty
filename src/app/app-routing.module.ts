@@ -11,6 +11,14 @@ const routes: Routes = [
     loadChildren: () => import('./step-1/step-1.module').then( m => m.Step1PageModule),
   },
   {
+    path: 'step-2',
+    loadChildren: () => import('./step-2/step-2.module').then( m => m.Step2PageModule),
+  },
+  {
+    path: 'step-3',
+    loadChildren: () => import('./step-3/step-3.module').then( m => m.Step3PageModule),
+  },
+  {
     path: '',
     redirectTo: 'start',
     pathMatch: 'full',
