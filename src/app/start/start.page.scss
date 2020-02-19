@@ -21,14 +21,9 @@ $button-size: 200px;
   }
 
   & .button {
-    background: white;
-    color: black;
     font-size: 200%;
-    border-radius: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     width: $button-size;
     height: $button-size;
+    --border-radius: 100%;
   }
 }

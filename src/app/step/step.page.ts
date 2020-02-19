@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { StateService } from '../state.service';
+import { SharedService } from '../shared/shared.service';
 
 @Component({
   selector: 'app-step',
@@ -8,16 +8,16 @@ import { StateService } from '../state.service';
 })
 export class StepPage {
   get step() {
-    return this.stateService.step;
+    return this.sharedService.step;
   }
 
   get nextStep() {
-    return this.stateService.nextStep;
+    return this.sharedService.nextStep;
   }
 
   get prevStep() {
-    return this.stateService.prevStep;
+    return this.sharedService.prevStep;
   }
 
-  constructor(private stateService: StateService) {}
+  constructor(private sharedService: SharedService) {}
 }

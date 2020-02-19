@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { NavigationEnd, Router} from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
 })
-export class StateService {
+export class SharedService {
   step: number = 0;
 
   get nextStep() {
