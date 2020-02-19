@@ -1,0 +1,25 @@
+<div class="container">
+  <ng-container [ngSwitch]="true">
+    <ng-container *ngSwitchCase="isAlpha">
+      <strong>
+        Hand the device to {{ this.sender }}
+      </strong>
+    </ng-container>
+    <ng-container *ngSwitchCase="isBravo">
+      <strong>
+        You, {{ this.sender }}, selected {{ this.receiver }}
+      </strong>
+      <ion-button expand="block" color="danger" (click)="selectNextReceiver()">
+        Try again
+      </ion-button>
+    </ng-container>
+    <ng-container *ngSwitchCase="isCharlie">
+      <strong>
+        Everyone has been matched!
+      </strong>
+    </ng-container>
+  </ng-container>
+  <ion-button expand="block" (click)="onNextState()">
+    Continue
+  </ion-button>
+</div>

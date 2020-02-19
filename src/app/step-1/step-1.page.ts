@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormArray, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-step-1',
@@ -8,6 +9,8 @@ import { FormArray, FormControl, Validators } from '@angular/forms';
 })
 export class Step1Page {
   form: FormArray = new FormArray([this.newPlayer()], [Validators.minLength(3)]);
+
+  constructor(private router: Router) {}
 
   newPlayer(): FormControl {
     return new FormControl('', [Validators.required]);
@@ -21,5 +24,7 @@ export class Step1Page {
     this.form.removeAt(i);
   }
 
-  onSubmit(form: string[]): void {}
+  onSubmit(form: string[]): void {
+    this.router.navigate(['/step/2']);
+  }
 }
