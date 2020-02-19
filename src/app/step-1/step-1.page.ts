@@ -7,17 +7,19 @@ import { FormArray, FormControl, Validators } from '@angular/forms';
   styleUrls: ['step-1.page.scss'],
 })
 export class Step1Page {
-  players: FormArray = new FormArray([this.newControl()]);
+  form: FormArray = new FormArray([this.newPlayer()], [Validators.minLength(3)]);
 
-  newControl(): FormControl {
+  newPlayer(): FormControl {
     return new FormControl('', [Validators.required]);
   }
 
   onCreate(): void {
-    this.players.push(this.newControl());
+    this.form.push(this.newPlayer());
   }
 
   onDestroy(i: number): void {
-    this.players.removeAt(i);
+    this.form.removeAt(i);
   }
+
+  onSubmit(form: string[]): void {}
 }
