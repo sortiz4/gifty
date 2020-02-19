@@ -49,6 +49,8 @@ export class Step2Page {
       'Golf',
     ];
     this.state = State.Alpha;
+    delete this.sender;
+    delete this.receiver;
     this.senderNames = Array.from(names);
     this.receiverNames = Array.from(names);
     this.selectNextSender();
