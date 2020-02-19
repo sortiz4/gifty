@@ -16,7 +16,7 @@ function random(min, max) {
   styleUrls: ['step-2.page.scss'],
 })
 export class Step2Page {
-  state: State = State.Alpha;
+  state: State;
   sender: string;
   receiver: string;
   senderNames: string[];
@@ -35,6 +35,10 @@ export class Step2Page {
   }
 
   constructor() {
+    this.initialize();
+  }
+
+  initialize(): void {
     const names = [
       'Alpha',
       'Bravo',
@@ -44,6 +48,7 @@ export class Step2Page {
       'Foxtrot',
       'Golf',
     ];
+    this.state = State.Alpha;
     this.senderNames = Array.from(names);
     this.receiverNames = Array.from(names);
     this.selectNextSender();
