@@ -4,6 +4,7 @@ $space: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  overflow-y: auto;
   position: absolute;
   top: 0;
   bottom: 0;
