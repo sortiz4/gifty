@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 enum State {
   Alpha,
@@ -34,7 +35,7 @@ export class Step2Page {
     return this.state === State.Charlie;
   }
 
-  constructor() {
+  constructor(private router: Router) {
     this.initialize();
   }
 
@@ -65,7 +66,7 @@ export class Step2Page {
     while(true) {
       const i = random(0, this.receiverNames.length - 1);
       const value = this.receiverNames[i];
-      if(value !== this.sender && value !== this.receiver) {
+      if(this.receiverNames.length < 2 || value !== this.sender && value !== this.receiver) {
         return this.receiver = value;
       }
     }
@@ -95,6 +96,7 @@ export class Step2Page {
         }
         break;
       case State.Charlie:
+        this.router.navigate(['/']);
         break;
     }
   }
