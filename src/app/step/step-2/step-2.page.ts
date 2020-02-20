@@ -14,7 +14,7 @@ function random(min, max) {
 @Component({
   selector: 'step-2',
   templateUrl: 'step-2.page.html',
-  styleUrls: ['../step.page.scss'],
+  styleUrls: ['../../shared/shared.page.scss'],
 })
 export class Step2Page {
   state: State;

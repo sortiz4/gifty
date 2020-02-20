@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'step-1',
   templateUrl: 'step-1.page.html',
-  styleUrls: ['../step.page.scss'],
+  styleUrls: ['../../shared/shared.page.scss'],
 })
 export class Step1Page {
   form: FormArray = new FormArray([this.newPlayer()], [Validators.minLength(3)]);
