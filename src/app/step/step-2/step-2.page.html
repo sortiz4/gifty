@@ -2,17 +2,38 @@
 <ion-content>
   <div class="container">
     <div></div>
-    <h1 [ngSwitch]="true">
+    <ion-card [ngSwitch]="true">
       <ng-container *ngSwitchCase="isAlpha">
-        Hand the device to {{ this.sender }}
+        <ion-card-header>
+          <ion-card-title>
+            Hand the device to {{ this.sender }}
+          </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          Continue to select someone
+        </ion-card-content>
       </ng-container>
       <ng-container *ngSwitchCase="isBravo">
-        You selected {{ this.receiver }}
+        <ion-card-header>
+          <ion-card-title>
+            You selected {{ this.receiver }}
+          </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          Continue or try again to select someone else
+        </ion-card-content>
       </ng-container>
       <ng-container *ngSwitchCase="isCharlie">
-        You've reached the end!
+        <ion-card-header>
+          <ion-card-title>
+            You've reached the end!
+          </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          Continue or restart the selection process
+        </ion-card-content>
       </ng-container>
-    </h1>
+    </ion-card>
     <div>
       <ng-container [ngSwitch]="true">
         <ion-button *ngSwitchCase="isAlpha" expand="block" class="hidden"></ion-button>

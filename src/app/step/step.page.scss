@@ -10,12 +10,6 @@ $space: 20px;
   left: 0;
   right: 0;
 
-  & h1 {
-    margin: $space auto;
-    padding: $space;
-    text-align: center;
-  }
-
   & strong {
     margin: $space auto;
   }
@@ -33,6 +27,13 @@ $space: 20px;
   & .child {
     display: flex;
     flex-direction: column;
+  }
+}
+
+ion-card {
+  &, & * {
+    justify-content: center;
+    text-align: center;
   }
 }
 
