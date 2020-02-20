@@ -1,5 +1,12 @@
 $space: 20px;
 
+ion-card {
+  &, & * {
+    justify-content: center;
+    text-align: center;
+  }
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -24,16 +31,22 @@ $space: 20px;
     transform: translateY(-50%);
   }
 
+  & .title {
+    text-align: center;
+
+    & ion-card-title {
+      font-size: 300%;
+    }
+
+    & ion-card-subtitle {
+      font-size: 125%;
+      margin-top: $space / 2;
+    }
+  }
+
   & .child {
     display: flex;
     flex-direction: column;
-  }
-}
-
-ion-card {
-  &, & * {
-    justify-content: center;
-    text-align: center;
   }
 }
 

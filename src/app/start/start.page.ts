@@ -3,6 +3,8 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'start',
   templateUrl: 'start.page.html',
-  styleUrls: ['start.page.scss'],
+  styleUrls: ['../step/step.page.scss'],
 })
-export class StartPage {}
+export class StartPage {
+  title: string = document.title;
+}
