@@ -3,7 +3,7 @@ import { FormArray, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-step-1',
+  selector: 'step-1',
   templateUrl: 'step-1.page.html',
   styleUrls: ['step-1.page.scss'],
 })

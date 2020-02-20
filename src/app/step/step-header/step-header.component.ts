@@ -1,10 +1,12 @@
-import { Injectable } from '@angular/core';
+import { Component } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 
-@Injectable({
-  providedIn: 'root',
+@Component({
+  selector: 'step-header',
+  templateUrl: './step-header.component.html',
+  styleUrls: ['./step-header.component.scss'],
 })
-export class SharedService {
+export class StepHeaderComponent {
   step: number = 0;
 
   get nextStep() {
@@ -13,6 +15,15 @@ export class SharedService {
 
   get prevStep() {
     return this.step - 1;
+  }
+
+  get defaultHref(): string {
+    switch(this.step) {
+      case 1:
+        return '/';
+      case 2:
+        return '/step/1';
+    }
   }
 
   constructor(private router: Router) {

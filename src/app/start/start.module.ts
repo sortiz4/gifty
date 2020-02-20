@@ -13,14 +13,14 @@ const routes: Routes = [
 ];
 
 @NgModule({
+  declarations: [
+    StartPage,
+  ],
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
     RouterModule.forChild(routes),
-  ],
-  declarations: [
-    StartPage,
   ],
 })
 export class StartPageModule {}
