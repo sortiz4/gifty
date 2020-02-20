@@ -1,8 +1,8 @@
-<div class="container">
-  <strong>
-    Add a few names to get started
-  </strong>
-  <form [formGroup]="form" (submit)="onSubmit(form.value)">
+<form class="container" [formGroup]="form" (submit)="onSubmit(form.value)">
+  <div>
+    <strong>
+      Add a few names to get started
+    </strong>
     <ion-list *ngFor="let _ of form.controls; let i = index">
       <ion-item>
         <ion-label position="stacked">
@@ -23,8 +23,8 @@
           (click)="onDestroy(i)"></ion-icon>
       </ion-item>
     </ion-list>
-    <ion-button expand="block" type="submit" [disabled]="!form.valid">
-      Continue
-    </ion-button>
-  </form>
-</div>
+  </div>
+  <ion-button expand="block" type="submit" [disabled]="!form.valid">
+    Continue
+  </ion-button>
+</form>

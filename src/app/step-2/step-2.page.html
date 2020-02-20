@@ -5,7 +5,7 @@
       Hand the device to {{ this.sender }}
     </ng-container>
     <ng-container *ngSwitchCase="isBravo">
-      You ({{ this.sender }}) selected {{ this.receiver }}
+      You selected {{ this.receiver }}
     </ng-container>
     <ng-container *ngSwitchCase="isCharlie">
       You've reached the end!
@@ -13,9 +13,7 @@
   </h1>
   <div>
     <ng-container [ngSwitch]="true">
-      <ion-button *ngSwitchCase="isAlpha" expand="block" color="danger" class="invisible">
-        Blank
-      </ion-button>
+      <ion-button *ngSwitchCase="isAlpha" expand="block" class="hidden"></ion-button>
       <ion-button *ngSwitchCase="isBravo" expand="block" color="danger" (click)="selectNextReceiver()">
         Try again
       </ion-button>
