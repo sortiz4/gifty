@@ -1,17 +1,19 @@
 $space: 20px;
 
 .container {
+  display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  overflow-y: auto;
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
 
-  &, & > *:first-child {
-    display: flex;
-    flex-direction: column;
+  & h1 {
+    margin: $space auto;
+    padding: $space;
+    text-align: center;
   }
 
   & strong {
@@ -27,4 +29,13 @@ $space: 20px;
     top: 50%;
     transform: translateY(-50%);
   }
+
+  & .child {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.hidden {
+  opacity: 0;
 }
