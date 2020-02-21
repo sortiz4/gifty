@@ -2,7 +2,7 @@
 <ion-content>
   <div class="container">
     <div></div>
-    <ion-card [ngSwitch]="true">
+    <div class="card" [ngSwitch]="true">
       <ng-container *ngSwitchCase="isAlpha">
         <ion-card-header>
           <ion-card-title>
@@ -33,9 +33,10 @@
           Continue or restart the selection process
         </ion-card-content>
       </ng-container>
-    </ion-card>
+    </div>
     <div>
       <ng-container [ngSwitch]="true">
+        <ion-button *ngSwitchCase="isAlpha" expand="block" class="hidden"></ion-button>
         <ion-button *ngSwitchCase="isBravo" expand="block" color="danger" (click)="selectNextReceiver()">
           Try again
         </ion-button>

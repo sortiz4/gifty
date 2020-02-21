@@ -1,9 +1,7 @@
 $space: 20px;
 
-ion-card {
-  height: 100%;
+.card {
   margin: $space * 0.75;
-  margin-bottom: 0;
 
   &, & * {
     display: flex;
@@ -13,7 +11,7 @@ ion-card {
   }
 
   & ion-card-title {
-    font-size: 150%;
+    font-size: 165%;
   }
 }
 
@@ -45,6 +43,10 @@ ion-card {
     top: 50%;
     transform: translateY(-50%);
   }
+}
+
+.hidden {
+  opacity: 0;
 }
 
 .title {
