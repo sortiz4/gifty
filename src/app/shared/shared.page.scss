@@ -2,6 +2,7 @@ $space: 20px;
 
 ion-card {
   height: 100%;
+  margin: $space * 0.75;
   margin-bottom: 0;
 
   &, & * {
@@ -36,7 +37,7 @@ ion-card {
   }
 
   & ion-button {
-    margin: $space / 2;
+    margin: $space * 0.75;
   }
 
   & ion-icon {
@@ -56,5 +57,6 @@ ion-card {
   & ion-card-subtitle {
     font-size: 125%;
     margin-top: $space / 2;
+    text-transform: unset;
   }
 }
