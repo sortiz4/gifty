@@ -36,7 +36,6 @@
     </ion-card>
     <div>
       <ng-container [ngSwitch]="true">
-        <ion-button *ngSwitchCase="isAlpha" expand="block" class="hidden"></ion-button>
         <ion-button *ngSwitchCase="isBravo" expand="block" color="danger" (click)="selectNextReceiver()">
           Try again
         </ion-button>

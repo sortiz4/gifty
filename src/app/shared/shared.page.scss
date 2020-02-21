@@ -1,10 +1,24 @@
 $space: 20px;
 
 ion-card {
+  height: 100%;
+  margin-bottom: 0;
+
   &, & * {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     text-align: center;
   }
+
+  & ion-card-title {
+    font-size: 150%;
+  }
+}
+
+.child {
+  display: flex;
+  flex-direction: column;
 }
 
 .container {
@@ -30,26 +44,17 @@ ion-card {
     top: 50%;
     transform: translateY(-50%);
   }
-
-  & .title {
-    text-align: center;
-
-    & ion-card-title {
-      font-size: 300%;
-    }
-
-    & ion-card-subtitle {
-      font-size: 125%;
-      margin-top: $space / 2;
-    }
-  }
-
-  & .child {
-    display: flex;
-    flex-direction: column;
-  }
 }
 
-.hidden {
-  opacity: 0;
+.title {
+  text-align: center;
+
+  & ion-card-title {
+    font-size: 300%;
+  }
+
+  & ion-card-subtitle {
+    font-size: 125%;
+    margin-top: $space / 2;
+  }
 }
