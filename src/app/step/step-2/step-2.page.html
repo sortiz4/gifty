@@ -39,7 +39,7 @@
         <ion-button *ngSwitchCase="isBravo" expand="block" color="danger" (click)="selectNextReceiver()">
           Try again
         </ion-button>
-        <ion-button *ngSwitchCase="isCharlie" expand="block" color="danger" (click)="initialize()">
+        <ion-button *ngSwitchCase="isCharlie" expand="block" color="danger" (click)="ngOnInit()">
           Restart
         </ion-button>
       </ng-container>

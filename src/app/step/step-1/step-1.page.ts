@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormArray, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { StepService } from '../step.service';
 
 @Component({
   selector: 'step-1',
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
 export class Step1Page {
   form: FormArray = new FormArray([this.newPlayer()], [Validators.minLength(3)]);
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private stepService: StepService) {}
 
   newPlayer(): FormControl {
     return new FormControl('', [Validators.required]);
@@ -25,6 +26,7 @@ export class Step1Page {
   }
 
   onSubmit(form: string[]): void {
+    this.stepService.names = Array.from(form);
     this.router.navigate(['/step/2']);
   }
 }

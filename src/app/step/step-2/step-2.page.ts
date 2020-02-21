@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { StepService } from '../step.service';
 
 enum State {
   Alpha,
@@ -7,16 +8,12 @@ enum State {
   Charlie,
 }
 
-function random(min, max) {
-  return Math.floor(Math.random() * (max + 1 - min) + min);
-}
-
 @Component({
   selector: 'step-2',
   templateUrl: 'step-2.page.html',
   styleUrls: ['../../shared/shared.page.scss'],
 })
-export class Step2Page {
+export class Step2Page implements OnInit {
   state: State;
   sender: string;
   receiver: string;
@@ -35,27 +32,19 @@ export class Step2Page {
     return this.state === State.Charlie;
   }
 
-  constructor(private router: Router) {
-    this.initialize();
-  }
+  constructor(private router: Router, private stepService: StepService) {}
 
-  initialize(): void {
-    const names = [
-      'Alpha',
-      'Bravo',
-      'Charlie',
-      'Delta',
-      'Echo',
-      'Foxtrot',
-      'Golf',
-    ];
+  ngOnInit(): void {
     this.state = State.Alpha;
     delete this.sender;
     delete this.receiver;
-    this.senderNames = Array.from(names);
-    this.receiverNames = Array.from(names);
+    this.senderNames = Array.from(this.stepService.names);
+    this.receiverNames = Array.from(this.stepService.names);
     this.selectNextSender();
-    this.selectNextReceiver();
+  }
+
+  random(min, max) {
+    return Math.floor(Math.random() * (max + 1 - min) + min);
   }
 
   selectNextSender(): string {
@@ -64,7 +53,7 @@ export class Step2Page {
 
   selectNextReceiver(): string {
     while(true) {
-      const i = random(0, this.receiverNames.length - 1);
+      const i = this.random(0, this.receiverNames.length - 1);
       const value = this.receiverNames[i];
       if(this.receiverNames.length < 2 || value !== this.sender && value !== this.receiver) {
         return this.receiver = value;
