@@ -55,7 +55,7 @@ export class Step2Page implements OnInit {
     for(let i = 0; true; i++) {
       const j = this.random(0, this.receiverNames.length - 1);
       const value = this.receiverNames[j];
-      if(i >= this.receiverNames.length || value !== this.sender && value !== this.receiver) {
+      if(i >= this.receiverNames.length * 4 || value !== this.sender && value !== this.receiver) {
         return this.receiver = value;
       }
     }
