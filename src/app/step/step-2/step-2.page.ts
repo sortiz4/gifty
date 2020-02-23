@@ -52,10 +52,10 @@ export class Step2Page implements OnInit {
   }
 
   selectNextReceiver(): string {
-    while(true) {
-      const i = this.random(0, this.receiverNames.length - 1);
-      const value = this.receiverNames[i];
-      if(this.receiverNames.length < 2 || value !== this.sender && value !== this.receiver) {
+    for(let i = 0; true; i++) {
+      const j = this.random(0, this.receiverNames.length - 1);
+      const value = this.receiverNames[j];
+      if(i >= this.receiverNames.length || value !== this.sender && value !== this.receiver) {
         return this.receiver = value;
       }
     }
