@@ -7,10 +7,11 @@ describe('Step2Page', () => {
   let fixture: ComponentFixture<Step2Page>;
 
   beforeEach(async(() => {
-    TestBed.configureTestingModule({
+    const config = {
       declarations: [Step2Page],
-      imports: [IonicModule.forRoot()]
-    }).compileComponents();
+      imports: [IonicModule.forRoot()],
+    };
+    TestBed.configureTestingModule(config).compileComponents();
 
     fixture = TestBed.createComponent(Step2Page);
     component = fixture.componentInstance;

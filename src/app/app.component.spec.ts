@@ -14,7 +14,7 @@ describe('AppComponent', () => {
     platformReadySpy = Promise.resolve();
     platformSpy = jasmine.createSpyObj('Platform', { ready: platformReadySpy });
 
-    TestBed.configureTestingModule({
+    const config = {
       declarations: [AppComponent],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
       providers: [
@@ -22,7 +22,8 @@ describe('AppComponent', () => {
         { provide: SplashScreen, useValue: splashScreenSpy },
         { provide: Platform, useValue: platformSpy },
       ],
-    }).compileComponents();
+    };
+    TestBed.configureTestingModule(config).compileComponents();
   }));
 
   it('should create the app', () => {

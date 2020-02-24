@@ -7,10 +7,11 @@ describe('StepHeaderComponent', () => {
   let fixture: ComponentFixture<StepHeaderComponent>;
 
   beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ StepHeaderComponent ],
-      imports: [IonicModule.forRoot()]
-    }).compileComponents();
+    const config = {
+      declarations: [StepHeaderComponent],
+      imports: [IonicModule.forRoot()],
+    };
+    TestBed.configureTestingModule(config).compileComponents();
 
     fixture = TestBed.createComponent(StepHeaderComponent);
     component = fixture.componentInstance;

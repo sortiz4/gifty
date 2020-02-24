@@ -7,10 +7,11 @@ describe('StartPage', () => {
   let fixture: ComponentFixture<StartPage>;
 
   beforeEach(async(() => {
-    TestBed.configureTestingModule({
+    const config = {
       declarations: [StartPage],
-      imports: [IonicModule.forRoot()]
-    }).compileComponents();
+      imports: [IonicModule.forRoot()],
+    };
+    TestBed.configureTestingModule(config).compileComponents();
 
     fixture = TestBed.createComponent(StartPage);
     component = fixture.componentInstance;
