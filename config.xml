@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<widget id="me.stevenortiz.gex" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>Gex</name>
+<widget id="me.stevenortiz.gifty" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Gifty</name>
     <description>A simple gift exchange application.</description>
     <author>Steven Ortiz</author>
     <content src="index.html" />

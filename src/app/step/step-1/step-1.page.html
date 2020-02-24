@@ -3,7 +3,11 @@
   <form class="container" [formGroup]="form" (submit)="onSubmit(form.value)">
     <div class="child">
       <strong>
-        Add a few names to get started
+        Add a few
+        <ion-text [color]="form.valid ? 'primary' : 'danger'">
+          names
+        </ion-text>
+        to get started
       </strong>
       <ion-list *ngFor="let _ of form.controls; let i = index">
         <ion-item>

@@ -6,21 +6,40 @@
       <ng-container *ngSwitchCase="isAlpha">
         <ion-card-header>
           <ion-card-title>
-            Hand the device to {{ this.sender }}
+            Hand the device to
+            <ion-text color="primary">
+              {{ this.sender }}
+            </ion-text>
           </ion-card-title>
         </ion-card-header>
         <ion-card-content>
-          Continue to select someone
+          <ion-text color="primary">
+            Continue
+          </ion-text>
+          to select someone
         </ion-card-content>
       </ng-container>
       <ng-container *ngSwitchCase="isBravo">
         <ion-card-header>
           <ion-card-title>
-            You selected {{ this.receiver }}
+            <ion-text color="primary">
+              You
+            </ion-text>
+            selected
+            <ion-text color="danger">
+              {{ this.receiver }}
+            </ion-text>
           </ion-card-title>
         </ion-card-header>
         <ion-card-content>
-          Continue or try again to select someone else
+          <ion-text color="primary">
+            Continue
+          </ion-text>
+          or
+          <ion-text color="danger">
+            try again
+          </ion-text>
+          to select someone else
         </ion-card-content>
       </ng-container>
       <ng-container *ngSwitchCase="isCharlie">
@@ -30,7 +49,14 @@
           </ion-card-title>
         </ion-card-header>
         <ion-card-content>
-          Continue or restart the selection process
+          <ion-text color="primary">
+            Continue
+          </ion-text>
+          or
+          <ion-text color="danger">
+            restart
+          </ion-text>
+          the selection process
         </ion-card-content>
       </ng-container>
     </div>
