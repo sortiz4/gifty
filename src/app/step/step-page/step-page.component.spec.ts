@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
-import { StepHeaderComponent } from './step-header.component';
+import { StepPageComponent } from './step-page.component';
 
-describe('StepHeaderComponent', () => {
-  let component: StepHeaderComponent;
-  let fixture: ComponentFixture<StepHeaderComponent>;
+describe('StepPageComponent', () => {
+  let component: StepPageComponent;
+  let fixture: ComponentFixture<StepPageComponent>;
 
   beforeEach(async(() => {
     const config = {
-      declarations: [StepHeaderComponent],
+      declarations: [StepPageComponent],
       imports: [IonicModule.forRoot()],
     };
     TestBed.configureTestingModule(config).compileComponents();
 
-    fixture = TestBed.createComponent(StepHeaderComponent);
+    fixture = TestBed.createComponent(StepPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

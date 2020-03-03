@@ -1,12 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, TemplateRef, ViewChild, ViewContainerRef } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
-  selector: 'step-header',
-  templateUrl: './step-header.component.html',
-  styleUrls: ['./step-header.component.scss'],
+  selector: 'step-page',
+  templateUrl: './step-page.component.html',
+  styleUrls: ['./step-page.component.scss'],
 })
-export class StepHeaderComponent {
+export class StepPageComponent implements OnInit {
+  @ViewChild('content', { static: true }) content: TemplateRef<Element>;
+
   step: number = 0;
 
   get nextStep() {
@@ -26,7 +28,7 @@ export class StepHeaderComponent {
     }
   }
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private viewContainer: ViewContainerRef) {
     this.router
       .events
       .subscribe(
@@ -42,5 +44,9 @@ export class StepHeaderComponent {
           }
         }
       );
+  }
+
+  ngOnInit(): void {
+    this.viewContainer.createEmbeddedView(this.content);
   }
 }

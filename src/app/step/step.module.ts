@@ -5,7 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import { Step1Page } from './step-1/step-1.page';
 import { Step2Page } from './step-2/step-2.page';
-import { StepHeaderComponent } from './step-header/step-header.component';
+import { StepPageComponent } from './step-page/step-page.component';
 import { SharedModule } from '../shared/shared.module';
 
 const routes: Routes = [
@@ -28,7 +28,7 @@ const routes: Routes = [
   declarations: [
     Step1Page,
     Step2Page,
-    StepHeaderComponent,
+    StepPageComponent,
   ],
   imports: [
     CommonModule,
