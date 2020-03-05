@@ -48,5 +48,6 @@ export class StepPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.viewContainer.createEmbeddedView(this.content);
+    this.viewContainer.element.nativeElement.hidden = true;
   }
 }
