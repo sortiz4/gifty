@@ -1,5 +1,10 @@
 $space: 20px;
 
+img {
+  margin-top: $space;
+  max-width: 75%;
+}
+
 .card {
   margin: $space * 0.75;
   text-align: center;
