@@ -19,13 +19,13 @@
             name="add-circle-outline"
             color="success"
             slot="end"
-            (click)="onCreate()"></ion-icon>
+            (click)="onAdd()"></ion-icon>
           <ion-icon
             *ngIf="form.length > 1"
             name="remove-circle-outline"
             color="danger"
             slot="end"
-            (click)="onDestroy(i)"></ion-icon>
+            (click)="onRemove(i)"></ion-icon>
         </ion-item>
       </ion-list>
     </div>

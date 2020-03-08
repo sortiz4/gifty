@@ -27,11 +27,11 @@ export class Step1Page {
     return new FormControl('', [Validators.required]);
   }
 
-  onCreate(): void {
+  onAdd(): void {
     this.form.push(this.newPlayer());
   }
 
-  onDestroy(i: number): void {
+  onRemove(i: number): void {
     this.form.removeAt(i);
   }
 
