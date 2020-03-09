@@ -5,6 +5,10 @@ img {
   max-width: 75%;
 }
 
+ion-button {
+  text-transform: unset;
+}
+
 .card {
   margin: $space * 0.75;
   text-align: center;
