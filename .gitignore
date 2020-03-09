@@ -8,6 +8,7 @@
 *.sw[mnpcod]
 *.tmp
 *.tmp.*
+*.ttf
 *~
 /.gradle
 /.idea
