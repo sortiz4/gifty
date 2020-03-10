@@ -27,6 +27,7 @@
 /plugins
 /www
 $RECYCLE.BIN/
+build.json
 log.txt
 npm-debug.log*
 Thumbs.db
