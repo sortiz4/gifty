@@ -3,7 +3,6 @@
     <color name="light" type="color">#FFFFFFFF</color>
     <color name="primary" type="color">#FF3880FF</color>
     <style name="AppTheme" parent="@android:style/Theme.Material.Light.NoActionBar">
-        <item name="android:background">@color/light</item>
         <item name="android:navigationBarColor">@color/light</item>
         <item name="android:statusBarColor">@color/light</item>
         <item name="android:windowBackground">@color/light</item>
