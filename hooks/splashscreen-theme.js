@@ -10,4 +10,4 @@ module.exports = function() {
   } catch(exc) {
     console.error(exc);
   }
-}
+};
