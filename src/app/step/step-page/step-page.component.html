@@ -1,15 +1,13 @@
-<ng-template #content>
-  <ion-header>
-    <ion-toolbar>
-      <ion-buttons slot="start">
-        <ion-back-button [defaultHref]="defaultHref"></ion-back-button>
-      </ion-buttons>
-      <ion-title>
-        Step {{ step }}
-      </ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <ion-content>
-    <ng-content></ng-content>
-  </ion-content>
-</ng-template>
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button [defaultHref]="defaultHref"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Step {{ step }}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ng-content></ng-content>
+</ion-content>

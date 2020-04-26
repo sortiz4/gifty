@@ -16,12 +16,12 @@ describe('AppComponent', () => {
 
     const config = {
       declarations: [AppComponent],
-      schemas: [CUSTOM_ELEMENTS_SCHEMA],
       providers: [
         { provide: StatusBar, useValue: statusBarSpy },
         { provide: SplashScreen, useValue: splashScreenSpy },
         { provide: Platform, useValue: platformSpy },
       ],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
     };
     TestBed.configureTestingModule(config).compileComponents();
   }));

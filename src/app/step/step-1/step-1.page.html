@@ -16,14 +16,14 @@
           <ion-input [formControlName]="i"></ion-input>
           <ion-icon
             *ngIf="i === form.length - 1"
-            name="add-circle-outline"
             color="success"
+            name="add-circle-outline"
             slot="end"
             (click)="onAdd()"></ion-icon>
           <ion-icon
             *ngIf="form.length > 1"
-            name="remove-circle-outline"
             color="danger"
+            name="remove-circle-outline"
             slot="end"
             (click)="onRemove(i)"></ion-icon>
         </ion-item>

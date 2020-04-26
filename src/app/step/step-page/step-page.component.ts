@@ -1,4 +1,4 @@
-import { Component, OnInit, TemplateRef, ViewChild, ViewContainerRef } from '@angular/core';
+import { Component } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
@@ -6,9 +6,7 @@ import { NavigationEnd, Router } from '@angular/router';
   templateUrl: './step-page.component.html',
   styleUrls: ['./step-page.component.scss'],
 })
-export class StepPageComponent implements OnInit {
-  @ViewChild('content', { static: true }) content: TemplateRef<Element>;
-
+export class StepPageComponent {
   step: number = 0;
 
   get nextStep() {
@@ -28,7 +26,7 @@ export class StepPageComponent implements OnInit {
     }
   }
 
-  constructor(private router: Router, private viewContainer: ViewContainerRef) {
+  constructor(private router: Router) {
     this.router
       .events
       .subscribe(
@@ -44,10 +42,5 @@ export class StepPageComponent implements OnInit {
           }
         }
       );
-  }
-
-  ngOnInit(): void {
-    this.viewContainer.createEmbeddedView(this.content);
-    this.viewContainer.element.nativeElement.hidden = true;
   }
 }
