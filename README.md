@@ -4,7 +4,7 @@ modeled after the age-old tradition of drawing names from a bowl. Start the
 application, enter the names of the participants, and pass the device around
 while everyone is randomly assigned to each other.
 
-Gifty is available on the [Google Play Store](https://play.google.com/store/apps/details?id=me.stevenortiz.gifty).
+Gifty is available on the [Google Play Store][1].
 
 ## Compilation
 Those seeking to compile must have...
@@ -19,3 +19,5 @@ Those seeking to compile must have...
 
 Once these requirements have been met, simply clone the repository and refer to
 the official Ionic documentation for further instructions on how to build.
+
+[1]: https://play.google.com/store/apps/details?id=me.stevenortiz.gifty "Gifty"
