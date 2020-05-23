@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormArray, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { StepService } from '../step.service';
+import { Bowl } from '../bowl.service';
 
 function uniqueValidator(form: FormArray): { unique: boolean } | null {
   return new Set(form.value).size !== form.value.length ? (
@@ -14,12 +14,12 @@ function uniqueValidator(form: FormArray): { unique: boolean } | null {
 @Component({
   selector: 'step-1',
   templateUrl: 'step-1.page.html',
-  styleUrls: ['../../shared/shared.page.scss'],
+  styleUrls: ['../step.page.scss'],
 })
 export class Step1Page {
   form: FormArray;
 
-  constructor(private router: Router, private stepService: StepService) {
+  constructor(private bowl: Bowl, private router: Router) {
     this.form = new FormArray([this.newPlayer()], [Validators.minLength(3), uniqueValidator]);
   }
 
@@ -36,7 +36,7 @@ export class Step1Page {
   }
 
   onSubmit(form: string[]): void {
-    this.stepService.names = Array.from(form);
+    this.bowl.names = Array.from(form);
     this.router.navigate(['/step/2']);
   }
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { StepService } from '../step.service';
+import { Bowl } from '../bowl.service';
 
 enum State {
   Alpha,
@@ -11,7 +11,7 @@ enum State {
 @Component({
   selector: 'step-2',
   templateUrl: 'step-2.page.html',
-  styleUrls: ['../../shared/shared.page.scss'],
+  styleUrls: ['../step.page.scss'],
 })
 export class Step2Page implements OnInit {
   state: State;
@@ -32,14 +32,14 @@ export class Step2Page implements OnInit {
     return this.state === State.Charlie;
   }
 
-  constructor(private router: Router, private stepService: StepService) {}
+  constructor(private bowl: Bowl, private router: Router) {}
 
   ngOnInit(): void {
     this.state = State.Alpha;
     delete this.sender;
     delete this.receiver;
-    this.senderNames = Array.from(this.stepService.names);
-    this.receiverNames = Array.from(this.stepService.names);
+    this.senderNames = Array.from(this.bowl.names);
+    this.receiverNames = Array.from(this.bowl.names);
     this.selectNextSender();
   }
 
