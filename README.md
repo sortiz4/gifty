@@ -20,4 +20,4 @@ Those seeking to compile must have...
 Once these requirements have been met, simply clone the repository and refer to
 the official Ionic documentation for further instructions on how to build.
 
-[1]: https://play.google.com/store/apps/details?id=me.stevenortiz.gifty "Gifty"
+[1]: https://play.google.com/store/apps/details?id=me.stevenortiz.gifty
