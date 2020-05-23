@@ -8,8 +8,12 @@ describe('StepPageComponent', () => {
 
   beforeEach(async(() => {
     const config = {
-      declarations: [StepPageComponent],
-      imports: [IonicModule.forRoot()],
+      declarations: [
+        StepPageComponent,
+      ],
+      imports: [
+        IonicModule.forRoot(),
+      ],
     };
     TestBed.configureTestingModule(config).compileComponents();
 

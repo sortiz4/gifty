@@ -15,13 +15,17 @@ describe('AppComponent', () => {
     platformSpy = jasmine.createSpyObj('Platform', { ready: platformReadySpy });
 
     const config = {
-      declarations: [AppComponent],
-      providers: [
-        { provide: StatusBar, useValue: statusBarSpy },
-        { provide: SplashScreen, useValue: splashScreenSpy },
-        { provide: Platform, useValue: platformSpy },
+      declarations: [
+        AppComponent,
       ],
-      schemas: [CUSTOM_ELEMENTS_SCHEMA],
+      providers: [
+        { provide: Platform, useValue: platformSpy },
+        { provide: SplashScreen, useValue: splashScreenSpy },
+        { provide: StatusBar, useValue: statusBarSpy },
+      ],
+      schemas: [
+        CUSTOM_ELEMENTS_SCHEMA,
+      ],
     };
     TestBed.configureTestingModule(config).compileComponents();
   }));
