@@ -1,5 +1,5 @@
 <app-step-page>
-  <div class="container">
+  <div class="content">
     <div></div>
     <div class="card" [ngSwitch]="true">
       <ng-container *ngSwitchCase="isAlpha">
@@ -62,16 +62,14 @@
         <img src="/assets/charlie.svg"/>
       </ng-container>
     </div>
-    <div>
-      <ng-container [ngSwitch]="true">
-        <ion-button *ngSwitchCase="isAlpha" expand="block" class="hidden"></ion-button>
-        <ion-button *ngSwitchCase="isBravo" expand="block" color="danger" (click)="selectNextReceiver()">
-          Try again
-        </ion-button>
-        <ion-button *ngSwitchCase="isCharlie" expand="block" color="danger" (click)="ngOnInit()">
-          Restart
-        </ion-button>
-      </ng-container>
+    <div [ngSwitch]="true">
+      <ion-button *ngSwitchCase="isAlpha" class="hidden" expand="block"></ion-button>
+      <ion-button *ngSwitchCase="isBravo" color="danger" expand="block" (click)="selectNextReceiver()">
+        Try again
+      </ion-button>
+      <ion-button *ngSwitchCase="isCharlie" color="danger" expand="block" (click)="ngOnInit()">
+        Restart
+      </ion-button>
       <ion-button expand="block" (click)="onNextState()">
         Continue
       </ion-button>
