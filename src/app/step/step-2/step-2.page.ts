@@ -32,7 +32,8 @@ export class Step2Page implements OnInit {
     return this.state === State.Charlie;
   }
 
-  constructor(private bowl: Bowl, private router: Router) {}
+  constructor(private bowl: Bowl, private router: Router) {
+  }
 
   ngOnInit(): void {
     this.state = State.Alpha;

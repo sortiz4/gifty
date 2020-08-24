@@ -17,10 +17,9 @@ function uniqueValidator(form: FormArray): { unique: boolean } | null {
   styleUrls: ['step-1.page.scss'],
 })
 export class Step1Page {
-  form: FormArray;
+  form: FormArray = new FormArray([this.newPlayer()], [Validators.minLength(3), uniqueValidator]);
 
   constructor(private bowl: Bowl, private router: Router) {
-    this.form = new FormArray([this.newPlayer()], [Validators.minLength(3), uniqueValidator]);
   }
 
   newPlayer(): FormControl {
