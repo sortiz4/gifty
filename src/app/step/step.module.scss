@@ -9,6 +9,10 @@ ion-button {
   text-transform: unset;
 }
 
+ion-list {
+  padding: 0;
+}
+
 .card {
   margin: $space * 0.75;
   text-align: center;
