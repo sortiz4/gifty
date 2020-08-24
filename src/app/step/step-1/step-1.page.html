@@ -1,4 +1,4 @@
-<step-page>
+<app-step-page>
   <form class="container" [formGroup]="form" (submit)="onSubmit(form.value)">
     <div class="child">
       <strong>
@@ -8,8 +8,8 @@
         </ion-text>
         to get started
       </strong>
-      <ion-list *ngFor="let _ of form.controls; let i = index">
-        <ion-item>
+      <ion-list>
+        <ion-item *ngFor="let _ of form.controls; let i = index">
           <ion-label position="stacked">
             {{ i + 1 | ordinal }} name
           </ion-label>
@@ -33,4 +33,4 @@
       Continue
     </ion-button>
   </form>
-</step-page>
+</app-step-page>

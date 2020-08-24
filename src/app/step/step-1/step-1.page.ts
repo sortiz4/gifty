@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormArray, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Bowl } from '../bowl.service';
+import { Bowl } from '../../services/bowl.service';
 
 function uniqueValidator(form: FormArray): { unique: boolean } | null {
   return new Set(form.value).size !== form.value.length ? (
@@ -12,9 +12,9 @@ function uniqueValidator(form: FormArray): { unique: boolean } | null {
 }
 
 @Component({
-  selector: 'step-1',
+  selector: 'app-step-1',
   templateUrl: 'step-1.page.html',
-  styleUrls: ['../step.page.scss'],
+  styleUrls: ['step-1.page.scss'],
 })
 export class Step1Page {
   form: FormArray;

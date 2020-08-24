@@ -16,11 +16,6 @@ const routes: Routes = [
     redirectTo: '/step/0',
     pathMatch: 'full',
   },
-  {
-    path: '**',
-    redirectTo: '/step/0',
-    pathMatch: 'full',
-  },
 ];
 
 @NgModule({

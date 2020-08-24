@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Bowl } from '../bowl.service';
+import { Bowl } from '../../services/bowl.service';
 
 enum State {
   Alpha,
@@ -9,9 +9,9 @@ enum State {
 }
 
 @Component({
-  selector: 'step-2',
+  selector: 'app-step-2',
   templateUrl: 'step-2.page.html',
-  styleUrls: ['../step.page.scss'],
+  styleUrls: ['step-2.page.scss'],
 })
 export class Step2Page implements OnInit {
   state: State;
@@ -52,9 +52,9 @@ export class Step2Page implements OnInit {
   }
 
   selectNextReceiver(): string {
-    while(true) {
+    while (true) {
       const next = this.receiverNames[this.random(0, this.receiverNames.length - 1)];
-      if(
+      if (
         (this.receiverNames.length > 2 && next !== this.sender && next !== this.receiver) ||
         (this.receiverNames.length === 2 && next !== this.sender) ||
         (this.receiverNames.length < 2)
@@ -66,20 +66,20 @@ export class Step2Page implements OnInit {
 
   removeCurrentReceiver(): string {
     const i = this.receiverNames.indexOf(this.receiver);
-    if(i > -1) {
+    if (i > -1) {
       this.receiverNames.splice(i, 1);
     }
     return this.receiver;
   }
 
   onNextState(): void {
-    switch(this.state) {
+    switch (this.state) {
       case State.Alpha:
         this.state = State.Bravo;
         this.selectNextReceiver();
         break;
       case State.Bravo:
-        if(this.senderNames.length > 0) {
+        if (this.senderNames.length > 0) {
           this.state = State.Alpha;
           this.selectNextSender();
           this.removeCurrentReceiver();

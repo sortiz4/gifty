@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
-  selector: 'step-page',
+  selector: 'app-step-page',
   templateUrl: './step-page.component.html',
   styleUrls: ['./step-page.component.scss'],
 })
@@ -18,7 +18,7 @@ export class StepPageComponent {
   }
 
   get defaultHref(): string {
-    switch(this.step) {
+    switch (this.step) {
       case 1:
         return '/';
       case 2:
@@ -31,7 +31,7 @@ export class StepPageComponent {
       .events
       .subscribe(
         event => {
-          if(event instanceof NavigationEnd) {
+          if (event instanceof NavigationEnd) {
             const fragments = event.url.split('/').slice(1);
             const [path, step] = [fragments[0], +fragments[1]];
             if(path === 'step' && !Number.isNaN(step)) {
