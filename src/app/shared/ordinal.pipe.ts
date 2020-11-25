@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
-const suffix: string[] = ['th', 'st', 'nd', 'rd'];
+const suffix = ['th', 'st', 'nd', 'rd'];
 
 @Pipe({
   name: 'ordinal',

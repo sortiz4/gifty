@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 import { StepPageComponent } from './step-page.component';
 
@@ -6,7 +6,7 @@ describe('StepPageComponent', () => {
   let component: StepPageComponent;
   let fixture: ComponentFixture<StepPageComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     const config = {
       declarations: [
         StepPageComponent,

@@ -19,6 +19,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
+  bootstrap: [
+    AppComponent,
+  ],
   declarations: [
     AppComponent,
   ],
@@ -31,9 +34,6 @@ const routes: Routes = [
     SplashScreen,
     StatusBar,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-  ],
-  bootstrap: [
-    AppComponent,
   ],
 })
 export class AppModule {}

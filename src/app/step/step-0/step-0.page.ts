@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['step-0.page.scss'],
 })
 export class Step0Page {
-  title: string = document.title;
+  title = document.title;
 }

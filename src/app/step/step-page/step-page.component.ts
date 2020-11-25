@@ -7,13 +7,13 @@ import { NavigationEnd, Router } from '@angular/router';
   styleUrls: ['./step-page.component.scss'],
 })
 export class StepPageComponent {
-  step: number = 0;
+  step = 0;
 
-  get nextStep() {
+  get nextStep(): number {
     return this.step + 1;
   }
 
-  get prevStep() {
+  get prevStep(): number {
     return this.step - 1;
   }
 

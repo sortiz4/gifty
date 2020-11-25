@@ -4,10 +4,13 @@ const PATH = './platforms/android/app/src/main/java/org/apache/cordova/splashscr
 const OLD_TEXT = 'android.R.style.Theme_Translucent_NoTitleBar';
 const NEW_TEXT = 'cordova.getActivity().getResources().getIdentifier("AppTheme", "style", cordova.getActivity().getPackageName())';
 
-module.exports = function() {
+module.exports = async function() {
   try {
-    fs.writeFileSync(PATH, fs.readFileSync(PATH, 'utf-8').replace(OLD_TEXT, NEW_TEXT));
-  } catch(exc) {
-    console.error(exc);
+    const oldContent = await fs.promises.readFile(PATH, 'utf-8');
+    const newContent = oldContent.replace(OLD_TEXT, NEW_TEXT);
+    if (oldContent !== newContent) {
+      await fs.promises.writeFile(PATH, newContent);
+    }
+  } catch {
   }
 };

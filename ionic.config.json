@@ -1,7 +1,12 @@
 {
   "name": "gifty",
+  "type": "angular",
+  "hooks": {
+    "build:before": [
+      "./hooks/splash-screen-patch.js"
+    ]
+  },
   "integrations": {
     "cordova": {}
-  },
-  "type": "angular"
+  }
 }
