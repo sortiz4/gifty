@@ -34,7 +34,7 @@ export class StepPageComponent {
           if (event instanceof NavigationEnd) {
             const fragments = event.url.split('/').slice(1);
             const [path, step] = [fragments[0], +fragments[1]];
-            if(path === 'step' && !Number.isNaN(step)) {
+            if (path === 'step' && !Number.isNaN(step)) {
               this.step = step;
             } else {
               this.step = 0;
