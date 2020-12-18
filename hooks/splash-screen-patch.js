@@ -4,7 +4,7 @@ const PATH = './platforms/android/app/src/main/java/org/apache/cordova/splashscr
 const OLD_TEXT = 'android.R.style.Theme_Translucent_NoTitleBar';
 const NEW_TEXT = 'cordova.getActivity().getResources().getIdentifier("AppTheme", "style", cordova.getActivity().getPackageName())';
 
-module.exports = async function() {
+module.exports = async function () {
   try {
     const oldContent = await fs.promises.readFile(PATH, 'utf-8');
     const newContent = oldContent.replace(OLD_TEXT, NEW_TEXT);
