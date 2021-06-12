@@ -1,8 +1,8 @@
 # Gifty
 Gifty is a completely free and open source gift exchange tool for Android
-modeled after the age-old tradition of drawing names from a bowl. Start the
-application, enter the names of the participants, and pass the device around
-while everyone is randomly assigned to each other.
+modeled after the age-old tradition of drawing names from a bowl. Enter the
+names of the participants and pass the device around while everyone is randomly
+assigned to each other.
 
 Gifty is available on the [Google Play Store][1].
 
@@ -10,10 +10,10 @@ Gifty is available on the [Google Play Store][1].
 Those seeking to compile must have...
 
 - Node.js 13.10
-- NPM 6.13
-- Ionic 6.1
+- NPM 6.15
+- Ionic 6.5
 - Cordova 9.0
-- Cordova Resources 0.9
+- Cordova Resources 0.15
 - Android Studio 4.0
 - Android SDK 28
 
