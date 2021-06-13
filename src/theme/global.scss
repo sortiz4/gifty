@@ -1,4 +1,37 @@
-$space: 20px;
+@import './app.scss';
+
+@font-face {
+  font-family: Handwritten;
+  src: url('~src/assets/Mali-Regular.ttf') format('truetype');
+}
+
+ion-button {
+  text-transform: none;
+}
+
+ion-grid {
+  padding-left: $app-space-2;
+  padding-right: $app-space-2;
+}
+
+.app-list {
+  padding: $app-space-2 0;
+
+  & > * {
+    & > ion-item {
+      --inner-padding-start: 0;
+      --inner-padding-end: 0;
+      --padding-top: 0;
+      --padding-bottom: #{$app-space-1};
+      --padding-start: #{$app-space-1};
+      --padding-end: #{$app-space-1};
+    }
+
+    &:not(:first-child) > ion-item {
+      --padding-top: #{$app-space-1};
+    }
+  }
+}
 
 img {
   margin-top: $space;
@@ -70,3 +103,4 @@ ion-list {
     text-transform: unset;
   }
 }
+

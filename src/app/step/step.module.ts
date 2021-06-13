@@ -1,12 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
-import { Step0Page } from './step-0/step-0.page';
-import { Step1Page } from './step-1/step-1.page';
-import { Step2Page } from './step-2/step-2.page';
-import { StepPageComponent } from './step-page/step-page.component';
 import { SharedModule } from '../shared/shared.module';
 
 const routes: Routes = [
@@ -15,31 +10,24 @@ const routes: Routes = [
     children: [
       {
         path: '0',
-        component: Step0Page,
+        loadChildren: () => import('./step-0/step-0.module').then(m => m.Step0PageModule),
       },
       {
         path: '1',
-        component: Step1Page,
+        loadChildren: () => import('./step-1/step-1.module').then(m => m.Step1PageModule),
       },
       {
         path: '2',
-        component: Step2Page,
+        loadChildren: () => import('./step-2/step-2.module').then(m => m.Step2PageModule),
       },
     ],
   },
 ];
 
 @NgModule({
-  declarations: [
-    Step0Page,
-    Step1Page,
-    Step2Page,
-    StepPageComponent,
-  ],
   imports: [
     CommonModule,
     IonicModule,
-    ReactiveFormsModule,
     RouterModule.forChild(routes),
     SharedModule,
   ],
