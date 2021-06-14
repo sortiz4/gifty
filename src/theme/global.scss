@@ -34,7 +34,7 @@ ion-grid {
 }
 
 img {
-  margin-top: $space;
+  margin-top: $app-space-4;
   max-width: 75%;
 }
 
@@ -46,8 +46,8 @@ ion-list {
   padding: 0;
 }
 
-.card {
-  margin: $space * 0.75;
+.app-card {
+  margin: $app-space-3;
   text-align: center;
 
   & ion-card-title {
@@ -55,12 +55,7 @@ ion-list {
   }
 }
 
-.child {
-  display: flex;
-  flex-direction: column;
-}
-
-.content {
+.app-content {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -71,11 +66,11 @@ ion-list {
   right: 0;
 
   & strong {
-    margin: $space auto;
+    margin: $app-space-4 auto;
   }
 
   & ion-button {
-    margin: $space * 0.75;
+    margin: $app-space-3;
   }
 
   & ion-icon {
@@ -85,13 +80,13 @@ ion-list {
   }
 }
 
-.hidden {
-  opacity: 0;
+.app-hidden {
+  visibility: hidden;
 }
 
-.title {
+.app-title {
+  font-family: Handwritten, sans-serif;
   text-align: center;
-  font-family: Handwritten;
 
   & ion-card-title {
     font-size: 300%;
@@ -99,7 +94,7 @@ ion-list {
 
   & ion-card-subtitle {
     font-size: 125%;
-    margin-top: $space / 2;
+    margin-top: $app-space-2;
     text-transform: unset;
   }
 }

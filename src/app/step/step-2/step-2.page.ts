@@ -1,11 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { Bowl } from '../../services/bowl.service';
+import { NavController } from '@ionic/angular';
+import { State } from '../../services/state.service';
 
-enum State {
+enum Mode {
   Alpha,
   Bravo,
   Charlie,
+}
+
+function random(min: number, max: number): number {
+  return Math.floor(Math.random() * (max + 1 - min) + min);
 }
 
 @Component({
@@ -14,38 +18,34 @@ enum State {
   styleUrls: ['./step-2.page.scss'],
 })
 export class Step2Page implements OnInit {
-  state: State;
+  mode: Mode;
   sender: string;
   receiver: string;
   senderNames: string[];
   receiverNames: string[];
 
   get isAlpha(): boolean {
-    return this.state === State.Alpha;
+    return this.mode === Mode.Alpha;
   }
 
   get isBravo(): boolean {
-    return this.state === State.Bravo;
+    return this.mode === Mode.Bravo;
   }
 
   get isCharlie(): boolean {
-    return this.state === State.Charlie;
+    return this.mode === Mode.Charlie;
   }
 
-  constructor(private bowl: Bowl, private router: Router) {
+  constructor(private navigation: NavController, private state: State) {
   }
 
   ngOnInit(): void {
-    this.state = State.Alpha;
-    delete this.sender;
-    delete this.receiver;
-    this.senderNames = Array.from(this.bowl.names);
-    this.receiverNames = Array.from(this.bowl.names);
+    this.mode = Mode.Alpha;
+    this.sender = void 0;
+    this.receiver = void 0;
+    this.senderNames = [...this.state.get().names];
+    this.receiverNames = [...this.state.get().names];
     this.selectNextSender();
-  }
-
-  random(min: number, max: number): number {
-    return Math.floor(Math.random() * (max + 1 - min) + min);
   }
 
   selectNextSender(): string {
@@ -54,7 +54,7 @@ export class Step2Page implements OnInit {
 
   selectNextReceiver(): string {
     while (true) {
-      const next = this.receiverNames[this.random(0, this.receiverNames.length - 1)];
+      const next = this.receiverNames[random(0, this.receiverNames.length - 1)];
       if (
         (this.receiverNames.length > 2 && next !== this.sender && next !== this.receiver) ||
         (this.receiverNames.length === 2 && next !== this.sender) ||
@@ -73,24 +73,23 @@ export class Step2Page implements OnInit {
     return this.receiver;
   }
 
-  onNextState(): void {
-    switch (this.state) {
-      case State.Alpha:
-        this.state = State.Bravo;
+  onNextState(): Promise<boolean> {
+    switch (this.mode) {
+      case Mode.Alpha:
+        this.mode = Mode.Bravo;
         this.selectNextReceiver();
-        break;
-      case State.Bravo:
+        return Promise.resolve(true);
+      case Mode.Bravo:
         if (this.senderNames.length > 0) {
-          this.state = State.Alpha;
+          this.mode = Mode.Alpha;
           this.selectNextSender();
           this.removeCurrentReceiver();
         } else {
-          this.state = State.Charlie;
+          this.mode = Mode.Charlie;
         }
-        break;
-      case State.Charlie:
-        this.router.navigate(['/']);
-        break;
+        return Promise.resolve(true);
+      case Mode.Charlie:
+        return this.navigation.navigateForward('/');
     }
   }
 }

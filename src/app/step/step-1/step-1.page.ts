@@ -1,14 +1,13 @@
 import { Component } from '@angular/core';
 import { FormArray, FormControl, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-import { Bowl } from '../../services/bowl.service';
+import { NavController } from '@ionic/angular';
+import { State } from '../../services/state.service';
 
-function uniqueValidator(form: FormArray): { unique: boolean } | null {
-  return new Set(form.value).size !== form.value.length ? (
-    { unique: false }
-  ) : (
-    null
-  );
+function validateUnique(form: FormArray): { unique: boolean } {
+  if (new Set(form.value).size !== form.value.length) {
+    return { unique: false };
+  }
+  return null;
 }
 
 @Component({
@@ -17,25 +16,25 @@ function uniqueValidator(form: FormArray): { unique: boolean } | null {
   styleUrls: ['./step-1.page.scss'],
 })
 export class Step1Page {
-  form = new FormArray([this.newPlayer()], [Validators.minLength(3), uniqueValidator]);
+  form = new FormArray([this.createNewPlayer()], [Validators.minLength(3), validateUnique]);
 
-  constructor(private bowl: Bowl, private router: Router) {
+  constructor(private navigation: NavController, private state: State) {
   }
 
-  newPlayer(): FormControl {
+  createNewPlayer(): FormControl {
     return new FormControl('', [Validators.required]);
   }
 
   onAdd(): void {
-    this.form.push(this.newPlayer());
+    this.form.push(this.createNewPlayer());
   }
 
   onRemove(i: number): void {
     this.form.removeAt(i);
   }
 
-  onSubmit(form: string[]): void {
-    this.bowl.names = Array.from(form);
-    this.router.navigate(['/step/2']);
+  onSubmit(): Promise<boolean> {
+    this.state.set({ names: [...this.form.value] });
+    return this.navigation.navigateForward('/step/2');
   }
 }

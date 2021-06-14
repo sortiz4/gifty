@@ -3,12 +3,12 @@ import merge from 'lodash/merge';
 import { BehaviorSubject } from 'rxjs';
 
 export interface Store {
-  readonly useThumbnails: boolean;
+  readonly names: string[];
 }
 
 function createDefaultStore(): Store {
   return {
-    useThumbnails: true,
+    names: [],
   };
 }
 
@@ -17,7 +17,6 @@ function createDefaultStore(): Store {
 })
 export class State {
   private readonly store$ = new BehaviorSubject<Store>(createDefaultStore());
-  readonly changes$ = this.store$.asObservable();
 
   get(): Store {
     return this.store$.getValue();

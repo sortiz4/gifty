@@ -1,7 +1,7 @@
 <app-page title="Step 2">
-  <div class="content">
+  <div class="app-content">
     <div></div>
-    <div class="card" [ngSwitch]="true">
+    <div class="app-card" [ngSwitch]="true">
       <ng-container *ngSwitchCase="isAlpha">
         <ion-card-header>
           <ion-card-title>
@@ -17,7 +17,7 @@
           </ion-text>
           to select someone
         </ion-card-content>
-        <img src="/assets/alpha.svg"/>
+        <img alt="Alpha" src="/assets/alpha.svg"/>
       </ng-container>
       <ng-container *ngSwitchCase="isBravo">
         <ion-card-header>
@@ -41,7 +41,7 @@
           </ion-text>
           to select someone else
         </ion-card-content>
-        <img src="/assets/bravo.svg"/>
+        <img alt="Bravo" src="/assets/bravo.svg"/>
       </ng-container>
       <ng-container *ngSwitchCase="isCharlie">
         <ion-card-header>
@@ -59,11 +59,13 @@
           </ion-text>
           the selection process
         </ion-card-content>
-        <img src="/assets/charlie.svg"/>
+        <img alt="Charlie" src="/assets/charlie.svg"/>
       </ng-container>
     </div>
     <div [ngSwitch]="true">
-      <ion-button *ngSwitchCase="isAlpha" class="hidden" expand="block"></ion-button>
+      <ion-button *ngSwitchCase="isAlpha" class="app-hidden" expand="block">
+        Hidden
+      </ion-button>
       <ion-button *ngSwitchCase="isBravo" color="danger" expand="block" (click)="selectNextReceiver()">
         Try again
       </ion-button>
