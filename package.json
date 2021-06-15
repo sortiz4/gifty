@@ -65,7 +65,6 @@
     ],
     "plugins": {
       "cordova-plugin-android-dark-mode-support": {},
-      "cordova-plugin-device": {},
       "cordova-plugin-ionic-keyboard": {},
       "cordova-plugin-ionic-webview": {},
       "cordova-plugin-navigationbar-color": {},
