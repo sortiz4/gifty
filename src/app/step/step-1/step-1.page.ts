@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormArray, FormControl, Validators } from '@angular/forms';
+import { AbstractControl, FormArray, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { NavController } from '@ionic/angular';
 import { State } from '../../services/state.service';
 
@@ -16,25 +16,45 @@ function validateUnique(form: FormArray): { unique: boolean } {
   styleUrls: ['./step-1.page.scss'],
 })
 export class Step1Page {
-  form = new FormArray([this.createNewPlayer()], [Validators.minLength(3), validateUnique]);
+  form = this.formBuilder.group(
+    {
+      names: this.formBuilder.array([this.createName()], [Validators.minLength(3), validateUnique]),
+    },
+  );
 
-  constructor(private navigation: NavController, private state: State) {
+  constructor(private formBuilder: FormBuilder, private navigation: NavController, private state: State) {
   }
 
-  createNewPlayer(): FormControl {
-    return new FormControl('', [Validators.required]);
+  canAdd(i: number): boolean {
+    return i === this.getNames().length - 1;
+  }
+
+  canRemove(): boolean {
+    return this.getNames().length > 1;
+  }
+
+  createName(): FormControl {
+    return this.formBuilder.control('', [Validators.required]);
+  }
+
+  getControls(): AbstractControl[] {
+    return this.getNames().controls;
+  }
+
+  getNames(): FormArray {
+    return this.form.controls.names as FormArray;
   }
 
   onAdd(): void {
-    this.form.push(this.createNewPlayer());
+    this.getNames().push(this.createName());
   }
 
   onRemove(i: number): void {
-    this.form.removeAt(i);
+    this.getNames().removeAt(i);
   }
 
   onSubmit(): Promise<boolean> {
-    this.state.set({ names: [...this.form.value] });
+    this.state.set({ names: [...this.form.value.names] });
     return this.navigation.navigateForward('/step/2');
   }
 }
