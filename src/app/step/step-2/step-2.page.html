@@ -1,8 +1,10 @@
 <app-page title="Step 2">
-  <div class="app-content">
-    <div></div>
-    <div class="app-card" [ngSwitch]="true">
-      <ng-container *ngSwitchCase="isAlpha">
+  <ion-grid class="app-content">
+    <ion-row>
+      <ion-col></ion-col>
+    </ion-row>
+    <ion-row class="app-card" [ngSwitch]="true">
+      <ion-col *ngSwitchCase="isAlpha">
         <ion-card-header>
           <ion-card-title>
             Hand the device to
@@ -18,8 +20,8 @@
           to select someone
         </ion-card-content>
         <img alt="Alpha" src="/assets/alpha.svg"/>
-      </ng-container>
-      <ng-container *ngSwitchCase="isBravo">
+      </ion-col>
+      <ion-col *ngSwitchCase="isBravo">
         <ion-card-header>
           <ion-card-title>
             <ion-text color="primary">
@@ -42,8 +44,8 @@
           to select someone else
         </ion-card-content>
         <img alt="Bravo" src="/assets/bravo.svg"/>
-      </ng-container>
-      <ng-container *ngSwitchCase="isCharlie">
+      </ion-col>
+      <ion-col *ngSwitchCase="isCharlie">
         <ion-card-header>
           <ion-card-title>
             You've reached the end!
@@ -60,21 +62,23 @@
           the selection process
         </ion-card-content>
         <img alt="Charlie" src="/assets/charlie.svg"/>
-      </ng-container>
-    </div>
-    <div [ngSwitch]="true">
-      <ion-button *ngSwitchCase="isAlpha" class="app-hidden" expand="block">
-        Hidden
-      </ion-button>
-      <ion-button *ngSwitchCase="isBravo" color="danger" expand="block" (click)="selectNextReceiver()">
-        Try again
-      </ion-button>
-      <ion-button *ngSwitchCase="isCharlie" color="danger" expand="block" (click)="ngOnInit()">
-        Restart
-      </ion-button>
-      <ion-button expand="block" (click)="onNextState()">
-        Continue
-      </ion-button>
-    </div>
-  </div>
+      </ion-col>
+    </ion-row>
+    <ion-row [ngSwitch]="true">
+      <ion-col>
+        <ion-button *ngSwitchCase="isAlpha" class="app-hidden" expand="block">
+          Hidden
+        </ion-button>
+        <ion-button *ngSwitchCase="isBravo" color="danger" expand="block" (click)="selectNextReceiver()">
+          Try again
+        </ion-button>
+        <ion-button *ngSwitchCase="isCharlie" color="danger" expand="block" (click)="ngOnInit()">
+          Restart
+        </ion-button>
+        <ion-button expand="block" (click)="onNextState()">
+          Continue
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </app-page>

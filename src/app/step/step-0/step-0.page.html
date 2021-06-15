@@ -1,17 +1,25 @@
 <ion-content>
-  <div class="app-content">
-    <div></div>
-    <div class="app-title">
-      <ion-card-title color="primary">
-        {{ title }}
-      </ion-card-title>
-      <ion-card-subtitle>
-        Simple gift exchanges
-      </ion-card-subtitle>
-      <img alt="Start" src="/assets/start.svg"/>
-    </div>
-    <ion-button class="button" expand="block" routerLink="/step/1">
-      Start
-    </ion-button>
-  </div>
+  <ion-grid class="app-content">
+    <ion-row>
+      <ion-col></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="app-title">
+        <ion-card-title color="primary">
+          {{ title }}
+        </ion-card-title>
+        <ion-card-subtitle>
+          Simple gift exchanges
+        </ion-card-subtitle>
+        <img alt="Start" src="/assets/start.svg"/>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button class="button" expand="block" routerLink="/step/1">
+          Start
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
