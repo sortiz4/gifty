@@ -7,7 +7,8 @@ const suffix = ['th', 'st', 'nd', 'rd'];
 })
 export class OrdinalPipe implements PipeTransform {
   transform(n: number): string {
-    const m = n % 100;
-    return n + (suffix[(m - 20) % 10] ?? suffix[m] ?? suffix[0]);
+    const a = n % 100;
+    const b = (a - 20) % 10;
+    return `${n}${suffix[b] ?? suffix[a] ?? suffix[0]}`;
   }
 }
