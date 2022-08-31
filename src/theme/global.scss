@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: Handwritten;
-  src: url('~src/assets/Mali-Regular.ttf') format('truetype');
+  src: url('~src/assets/fonts/Mali-Regular.ttf') format('truetype');
 }
 
 img {
@@ -16,6 +16,13 @@ ion-button {
 
 ion-list {
   padding: 0;
+}
+
+ion-list-header {
+  &.ios {
+    font-size: medium;
+    padding: 0;
+  }
 }
 
 .app-card {

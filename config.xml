@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <widget
     id="me.stevenortiz.gifty"
-    version="1.2.0"
+    version="1.4.0"
     xmlns="http://www.w3.org/ns/widgets"
     xmlns:android="http://schemas.android.com/apk/res/android">
     <name>Gifty</name>
