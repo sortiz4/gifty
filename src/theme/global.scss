@@ -7,11 +7,19 @@
 
 img {
   margin-top: $app-space-4;
-  max-width: 75%;
+  max-width: $app-image-max-width;
 }
 
 ion-button {
   text-transform: none;
+}
+
+ion-header {
+  &.md {
+    &::after {
+      display: none;
+    }
+  }
 }
 
 ion-list {
@@ -22,6 +30,12 @@ ion-list-header {
   &.ios {
     font-size: medium;
     padding: 0;
+  }
+}
+
+ion-toolbar {
+  &.ios {
+    --background: var(--ion-background-color);
   }
 }
 

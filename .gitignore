@@ -9,5 +9,7 @@
 /package-lock.json
 /platforms
 /plugins
-/src/assets
+/src/assets/fonts
+/src/assets/icons
+/src/assets/images
 /www

@@ -71,6 +71,10 @@
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+
+  // Theme
+  --ion-background-color: #ffffff;
+  --ion-background-color-rgb: 255, 255, 255;
 }
 
 // Dark colors
@@ -178,8 +182,8 @@
 
   // Material dark theme
   .md body {
-    --ion-background-color: #202020;
-    --ion-background-color-rgb: 32, 32, 32;
+    --ion-background-color: #000000;
+    --ion-background-color-rgb: 0, 0, 0;
     --ion-text-color: #ffffff;
     --ion-text-color-rgb: 255, 255, 255;
     --ion-border-color: #222222;

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AbstractControl, FormArray, FormBuilder, FormControl, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { NavController } from '@ionic/angular';
 import { State } from '../../services/state.service';
 
@@ -33,16 +33,16 @@ export class Step1Page {
     return this.getNames().length > 1;
   }
 
-  createName(): FormControl {
+  createName(): FormControl<string> {
     return this.formBuilder.control('', [Validators.required]);
   }
 
-  getControls(): AbstractControl[] {
+  getControls(): FormControl<string>[] {
     return this.getNames().controls;
   }
 
-  getNames(): FormArray {
-    return this.form.controls.names as FormArray;
+  getNames(): FormArray<FormControl<string>> {
+    return this.form.controls.names;
   }
 
   onAdd(): void {
