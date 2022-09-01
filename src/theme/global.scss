@@ -63,10 +63,6 @@ ion-toolbar {
     padding: 0;
   }
 
-  & strong {
-    margin: $app-space-4 auto;
-  }
-
   & ion-button {
     margin: $app-space-3;
   }
@@ -75,6 +71,16 @@ ion-toolbar {
     position: relative;
     top: 50%;
     transform: translateY(-50%);
+  }
+
+  & strong {
+    margin: $app-space-4 auto;
+  }
+
+  & > ion-row {
+    margin-left: var(--ion-safe-area-left);
+    margin-right: var(--ion-safe-area-right);
+    margin-bottom: var(--ion-safe-area-bottom);
   }
 }
 
@@ -96,4 +102,3 @@ ion-toolbar {
     text-transform: unset;
   }
 }
-
