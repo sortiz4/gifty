@@ -1,12 +1,5 @@
 {
   "name": "gifty",
   "type": "angular",
-  "hooks": {
-    "build:before": [
-      "hooks/ionic/build/before.js"
-    ]
-  },
-  "integrations": {
-    "cordova": {}
-  }
+  "integrations": {}
 }

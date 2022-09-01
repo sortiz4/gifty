@@ -1,7 +1,6 @@
 {
   "$schema": "node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
-  "defaultProject": "app",
   "newProjectRoot": "projects",
   "projects": {
     "app": {
@@ -136,32 +135,6 @@
           "options": {
             "browserTarget": "app:build"
           }
-        },
-        "ionic-cordova-build": {
-          "builder": "@ionic/angular-toolkit:cordova-build",
-          "configurations": {
-            "production": {
-              "browserTarget": "app:build:production"
-            },
-            "development": {
-              "browserTarget": "app:build:development"
-            }
-          },
-          "defaultConfiguration": "development"
-        },
-        "ionic-cordova-serve": {
-          "builder": "@ionic/angular-toolkit:cordova-serve",
-          "configurations": {
-            "production": {
-              "cordovaBuildTarget": "app:ionic-cordova-build:production",
-              "devServerTarget": "app:serve:production"
-            },
-            "development": {
-              "cordovaBuildTarget": "app:ionic-cordova-build:development",
-              "devServerTarget": "app:serve:development"
-            }
-          },
-          "defaultConfiguration": "development"
         }
       }
     }
@@ -175,7 +148,6 @@
     }
   },
   "cli": {
-    "analytics": false,
-    "defaultCollection": "@ionic/angular-toolkit"
+    "analytics": false
   }
 }

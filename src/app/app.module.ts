@@ -2,8 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { PreloadAllModules, RouteReuseStrategy, RouterModule, Routes } from '@angular/router';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
-import { SplashScreen } from '@ionic-native/splash-screen/ngx';
-import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 
 const routes: Routes = [
@@ -28,11 +26,9 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }),
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules, useHash: true }),
   ],
   providers: [
-    SplashScreen,
-    StatusBar,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
   ],
 })
