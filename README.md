@@ -1,8 +1,9 @@
 # Gifty
-Gifty is a completely free and open source multiplatform gift exchange tool
-modeled after the age-old tradition of drawing names from a bowl. Enter the
-names of the participants and pass the device around while everyone is randomly
-assigned to each other.
+Gifty is a mobile application that modernizes the traditional gift exchange
+experience by digitizing the classic names-in-a-bowl approach. Gifty allows
+users to enter participant names and then pass the device around the room as
+each person is randomly assigned a gift recipient, maintaining the element of
+surprise while eliminating the need for paper slips.
 
 ## Compilation
 Those seeking to compile must have...
